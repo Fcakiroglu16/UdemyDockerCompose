@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "http kestrel": {
+    "http": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -8,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5216"
+      "applicationUrl": "http://localhost:5285"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -30,7 +30,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:13716",
+      "applicationUrl": "http://localhost:42179",
       "sslPort": 0
     }
   }
