@@ -5,9 +5,9 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5000:80"
+      - "80"
   microservice2.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5010:80"
+      - "80"
