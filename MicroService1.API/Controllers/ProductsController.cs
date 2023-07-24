@@ -10,11 +10,28 @@ namespace MicroService1.API.Controllers
 	{
 
 		private readonly AppDbContext _context;
-
-		public ProductsController(AppDbContext context)
+		private readonly IConfiguration _configuration;
+		public ProductsController(AppDbContext context, IConfiguration configuration)
 		{
 			_context = context;
+			_configuration = configuration;
 		}
+
+		[HttpGet]
+		public async Task<IActionResult> Get()
+		{
+
+			var httpClient = new HttpClient();
+
+			var response = await httpClient.GetAsync($"{_configuration.GetSection("Microservices")["baseUrlMicroservice2"]}/api/products");
+
+			var context= await response.Content.ReadAsStringAsync();
+
+			return Ok(context);
+
+
+		}
+
 
 		[HttpPost]
 		public IActionResult Save()
